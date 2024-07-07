@@ -27,12 +27,13 @@ const Login = ({onLogin,onSwitch}) => {
   };
 
   return (
-    <div className="flex justify-center">
+    <div className="flex justify-center w-full">
       <div className="flex flex-col gap-2 w-full">
         <Input
           value={username}
           onChange={(e) => setUsername(e.target.value)}
           placeholder="Username"
+
         />
         <Input
           type="password"

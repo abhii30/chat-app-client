@@ -39,7 +39,7 @@ const Chat = () => {
   };
 
   return (
-    <div className="flex flex-col gap-2">
+    <div className="flex flex-col gap-2 md:mx-10">
       <div className="border-2 rounded-md p-4 w-full h-40 mb-2">
         {chat.map((msg, index) => (
           <div
