@@ -2,7 +2,7 @@ import { useState } from "react";
 import axios from "axios";
 import { Input, Button } from "../components/ui";
 
-const Signup = ({ onSignup }) => {
+const Signup = ({ onSignup,onSwitch }) => {
   const [email, setEmail] = useState("");
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -29,8 +29,7 @@ const Signup = ({ onSignup }) => {
 
   return (
     <div className="flex justify-center">
-      <div className="flex flex-col w-1/3 gap-2 ">
-        <h1 className="text-center">SignUp</h1>
+      <div className="flex flex-col gap-2 w-full">
         <Input
           value={email}
           onChange={(e) => setEmail(e.target.value)}

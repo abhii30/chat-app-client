@@ -1,10 +1,9 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import axios from "axios";
 import { Input, Button } from "../components/ui";
-import { Link } from "react-router-dom";
 const url = "http://localhost:1337/api/auth/local";
 
-const Login = ({onLogin}) => {
+const Login = ({onLogin,onSwitch}) => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
@@ -29,8 +28,7 @@ const Login = ({onLogin}) => {
 
   return (
     <div className="flex justify-center">
-      <div className="flex flex-col w-1/3 gap-2 ">
-        <h1 className="text-center">Login</h1>
+      <div className="flex flex-col gap-2 w-full">
         <Input
           value={username}
           onChange={(e) => setUsername(e.target.value)}
@@ -43,10 +41,8 @@ const Login = ({onLogin}) => {
           placeholder="Password"
         />
         <Button onClick={handleLogin}>Log In</Button>
-        {/* <Link to="/signup">Sign Up</Link> */}
-      </div>  
+      </div>
     </div>
-   
   );
 };
 
