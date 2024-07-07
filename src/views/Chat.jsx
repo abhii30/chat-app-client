@@ -8,9 +8,12 @@ const Chat = () => {
   const user = localStorage.getItem("user");
 
   useEffect(() => {
-    const storedChat = JSON.parse(localStorage.getItem("chatHistory"));
-    if (storedChat) {
-      setChat(storedChat);
+    const token = localStorage.getItem("authToken");
+    if (token) {
+      const storedChat = JSON.parse(localStorage.getItem("chatHistory"));
+      if (storedChat) {
+        setChat(storedChat);
+      }
     }
   }, []);
 
