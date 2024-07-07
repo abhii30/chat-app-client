@@ -10,7 +10,7 @@ const Signup = ({ onSignup,onSwitch }) => {
   const handleSignup = async () => {
     try {
       const response = await axios.post(
-        "http://localhost:1337/api/auth/local/register",
+        "https://chat-app-server-2ibm.onrender.com/api/auth/local/register",
         {
           email,
           username,

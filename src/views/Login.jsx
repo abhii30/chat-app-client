@@ -1,7 +1,7 @@
 import { useState } from "react";
 import axios from "axios";
 import { Input, Button } from "../components/ui";
-const url = "http://localhost:1337/api/auth/local";
+const url = "https://chat-app-server-2ibm.onrender.com/api/auth/local";
 
 const Login = ({onLogin,onSwitch}) => {
   const [username, setUsername] = useState("");
