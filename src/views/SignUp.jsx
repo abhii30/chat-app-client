@@ -1,22 +1,21 @@
 import { useState } from "react";
 import axios from "axios";
 import { Input, Button } from "../components/ui";
+// const url = "http://localhost:1337/api/auth/local";
+const url = "https://strapi-server-ywk5.onrender.com/api/auth/local";
 
-const Signup = ({ onSignup,onSwitch }) => {
+const Signup = ({ onSignup, onSwitch }) => {
   const [email, setEmail] = useState("");
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
   const handleSignup = async () => {
     try {
-      const response = await axios.post(
-        "https://chat-app-server-2ibm.onrender.com/api/auth/local/register",
-        {
-          email,
-          username,
-          password,
-        }
-      );
+      const response = await axios.post(url + "/register", {
+        email,
+        username,
+        password,
+      });
       console.log({ response });
       localStorage.setItem("authToken", response.data.jwt);
       localStorage.setItem("user", response.data.user.username);

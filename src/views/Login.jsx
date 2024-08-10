@@ -1,15 +1,16 @@
 import { useState } from "react";
 import axios from "axios";
 import { Input, Button } from "../components/ui";
-const url = "https://chat-app-server-2ibm.onrender.com/api/auth/local";
+// const url = "http://localhost:1337/api/auth/local";
+const url = "https://strapi-server-ywk5.onrender.com/api/auth/local";
 
-const Login = ({onLogin,onSwitch}) => {
+const Login = ({ onLogin, onSwitch }) => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
   const handleLogin = async () => {
     try {
-      if(username || password) {
+      if (username || password) {
         const response = await axios.post(url, {
           identifier: username,
           password: password,
@@ -33,7 +34,6 @@ const Login = ({onLogin,onSwitch}) => {
           value={username}
           onChange={(e) => setUsername(e.target.value)}
           placeholder="Username"
-
         />
         <Input
           type="password"
